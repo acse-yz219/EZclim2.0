@@ -264,24 +264,36 @@ def file_entry_preprocessing():
   
     filepath = args[0].strip()
     pieces = args[1].strip()
-    variable = args[2].strip()
-    output_unit = args[3].strip()
+    num_year = args[2].strip()
+    num_time = args[3].strip()
+    variable = args[4].strip()
+    output_unit = args[5].strip()
     
-    modelgrid = args[4].strip()
-    prefix = args[5].strip()
-    start_year = args[6].strip()
-    output_folder = args[7].strip()
-    if len(args[8]) == 0:
-            args[8] = False
-    if args[8].lower() == 'false' or args[8].lower() == 'f':
-        args[8] = False
-    elif args[8].lower() == 'true' or args[8].lower() == 't':
-        args[8] = True
-    regrid = args[8]
+    modelgrid = args[6].strip()
+    prefix = args[7].strip()
+    start_year = args[8].strip()
+    output_folder = args[9].strip()
+    if len(args[10]) == 0:
+            args[10] = False
+    if args[10].lower() == 'false' or args[8].lower() == 'f':
+        args[10] = False
+    elif args[10].lower() == 'true' or args[8].lower() == 't':
+        args[10] = True
+    regrid = args[10]
     try:
         pieces = [int(pieces.strip())]
     except Exception:
         print("ERROR in function file_preprocessing_entry: pieces may not be a int.")
+        sys.exit()
+    try:
+        num_year = int(num_year)
+    except Exception:
+        print("ERROR in function file_preprocessing_entry: num_year may not be a int.")
+        sys.exit()
+    try:
+        num_time = int(num_time)
+    except Exception:
+        print("ERROR in function file_preprocessing_entry: num_time may not be a int.")
         sys.exit()
     try:
         start_year = [int(start_year.strip())]
@@ -290,4 +302,4 @@ def file_entry_preprocessing():
         sys.exit()
         
 
-    return filepath,pieces,variable,output_unit,modelgrid,prefix,start_year,output_folder,regrid
+    return filepath,pieces,num_year,num_time,variable,output_unit,modelgrid,prefix,start_year,output_folder,regrid

@@ -8,6 +8,6 @@ from file_entry import file_entry_preprocessing
 
 
 if __name__ == "__main__":
-    filepath,pieces,variable,output_unit,model_grid,prefix,start_year,output_folder,regrid = file_entry_preprocessing()
-    nco = Nco(filepath,pieces,variable,output_unit,model_grid,prefix,start_year,output_folder,regrid)
+    filepath,pieces,num_year,num_time,variable,output_unit,model_grid,prefix,start_year,output_folder,regrid = file_entry_preprocessing()
+    nco = Nco(filepath,pieces,num_year,num_time,variable,output_unit,model_grid,prefix,start_year,output_folder,regrid)
     nco.preprocessing()
