@@ -1,1 +1,0 @@
-Default folder where netcdf data are stored

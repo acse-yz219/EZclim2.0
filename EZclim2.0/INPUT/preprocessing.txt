@@ -1,0 +1,21 @@
+# Created by Yusen Zhou
+# Preprocessing Option Input
+#
+# ----------------- PLEASE FILL IN THE ARGUMENTS LISTED BELOW ------------------
+#
+# REQUIRED ARGUMENTS
+# ------------------------------------------------------------------------------
+# File Path: /badc/cmip6/data/CMIP6/CMIP/MOHC/UKESM1-0-LL/historical/r11i1p1f2/Omon/so/gn/latest/so_Omon_UKESM1-0-LL_historical_r11i1p1f2_gn_185001-189912.nc
+File Path: DATA\so_Omon_UKESM1-0-LL_historical_r11i1p1f2_gn_185001-189912.nc
+Number of pieces: 10
+Variable Name: so
+Output Unit: K
+Model Grid: /badc/cmip5/data/cmip5/output1/MOHC/HadCM3/decadal1969/mon/ocean/Omon/r1i2p1/latest/so/so_Omon_HadCM3_decadal1969_r1i2p1_196911-197912.nc
+Output Prefix: so
+Start_year: 1850
+output_folder: DATA/temp
+regrid: True
+#
+# ------------------------------------------------------------------------------
+# HELP : Found in the UserGuide
+# ------------------------------------------------------------------------------
