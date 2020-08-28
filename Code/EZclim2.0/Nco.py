@@ -1,5 +1,5 @@
 """
-Created by Yusen Zhou
+Created by Yusen Zhou Created by Yusen Zhou (Github acse-yz219)
 """
 import os
 import directories
@@ -24,7 +24,10 @@ class Nco:
         self.local_file_path = "local.nc"
         self.local_temp_file_path = "temp_local.nc"
     def chunk(self):
-        
+        """
+        chunk the dataset into small pieces
+
+        """
         if not os.path.isdir(self.output_folder):
             os.makedirs(self.output_folder)
         interval  = int(self.num_time/self.pieces[0])
@@ -49,6 +52,10 @@ class Nco:
 
 
     def change_unit(self):
+        """
+        Chage the unit of the dataset
+        
+        """
         progress = ProgressBar(n_iter=1, total_width= 30 , description='Change Unit')
         string1 = 'units,'+self.variable+',o,c,'+self.output_unit
         list = ['ncatted','-O','-a',string1,'-o',self.local_file_path]
@@ -59,6 +66,9 @@ class Nco:
         print("")
 
     def regrid_file(self):
+        """
+        regrid the file 
+        """
         progress = ProgressBar(n_iter=1 , total_width= 30 , description='regrid_file')
         list = ['ncremap','-i',self.filepath,'-d',self.model_grid,'-o',self.local_temp_file_path]
         command = list
@@ -68,12 +78,19 @@ class Nco:
         print("")
 
     def delete(self):
+        """
+        Delete the file
+        
+        """
         if self.regrid == True :
           if os.path.exists(self.local_temp_file_path):
               os.remove(self.local_temp_file_path)
         if os.path.exists(self.local_file_path):
           os.remove(self.local_file_path)
     def preprocessing(self):
+        """
+        combine the step of preprocessing
+        """
         self.change_unit()
         if(self.regrid == True):
             self.regrid_file()

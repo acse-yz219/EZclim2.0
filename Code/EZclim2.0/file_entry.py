@@ -1,5 +1,5 @@
 """
-Created by Yusne Zhou
+Created by Yusne Zhou Created by Yusen Zhou (Github acse-yz219)
 """
 import os
 import directories
@@ -239,8 +239,7 @@ def file_entry(example=False):
 
 def file_entry_preprocessing():
     """
-    Get arguments from input or input_example file
-    :param example: set if input_example is used
+    Get arguments from preprocessing file
     :return: arguments
     """
     filename = os.path.join(directories.INPUT, directories.INPUT_PREPROCESSING_FILE)

@@ -1,5 +1,5 @@
 """
-Created by Adanna Akwataghibe (Github: AdannaAkwats)
+Created by Yusen Zhou  Created by Yusen Zhou (Github acse-yz219)
 """
 import time
 import sys
@@ -15,11 +15,18 @@ class ProgressBar:
         self.percent        = 0 
         self.initialize()
     def initialize(self):
+        """
+        Initialize the ProgressBar
+        """
         self.start = time.clock()
         sys.stdout.write(self.description+"  "+'%.2f%%' % (self.percent)+"   "+'|'*(self.iter*self.width) + ' '*((self.n_iter-self.iter)*self.width)+ "|"+"   "+"ETA: ")
         sys.stdout.flush()
 
     def update(self, q=1):
+        """
+        update the progressbar status
+        :param q: update steps
+        """
         self.iter +=1
         self.percent = self.iter/self.n_iter*100
         current = time.clock()
@@ -27,6 +34,9 @@ class ProgressBar:
         sys.stdout.flush()
 
     def finish(self):
+        """
+        finish the progress bar
+        """
         current = time.clock()
         sys.stdout.write("\r"+">> Total Time: "+ str(current - self.start) )
         sys.stdout.flush()
